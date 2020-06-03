@@ -5,7 +5,7 @@ This is a basic Scrapy based ETL framework which will scrape data from walmart w
 
 You can read more about Scrapy [here](https://scrapy.org/)
 
-- **Use Case **: Scraping a product department at Walmart Canada's website
+*Use Case* : Scraping a product department at Walmart Canada's website
 
 The product information is defined by two models (or tables):
 
