@@ -81,7 +81,7 @@ virtualenv venv --python=python3
 pip install -r requirements.txt 
 ```
 2. You will have to run `python database_setup.py` to generate DB models.
-3. You will have to  run the Spider with `python -m scrapy crawl ca_walmart -a branch=3106`. Where `branch` is the id of thw Walmart store you want to scrap.This will aggregate the sqlite database.
+3. You will have to  run the Spider with `python -m scrapy crawl ca_walmart -a branch=3106`. Where `branch` is the id of the Walmart store you want to scrap.This will aggregate the sqlite database.
 
 
 ## Code description
