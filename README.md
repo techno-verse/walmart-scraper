@@ -41,7 +41,7 @@ Both of the models above have been defined in the `models.py` file
 
 Walmart offers a very broad selection of products, from breakfast cereals to gym equipment. We will ingest their product information and store it in our database.
 
-The product information we will scape is:
+The product information we will scrape is:
 
 *Product*
 
