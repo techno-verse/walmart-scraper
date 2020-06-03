@@ -67,8 +67,21 @@ For now, we are only ingesting the [Fruits](https://www.walmart.ca/en/grocery/fr
 
 ## To run the scraper please perform the following steps
 
-1. You will have to run `python database_setup.py` to generate DB models.
-2. You will have to  run the Spider with `python -m scrapy crawl ca_walmart -a branch=3106`. Where `branch` is the id of thw Walmart store you want to scrap.This will aggregate the sqlite database.
+1. Set up environment
+```
+# Clone the repo
+git clone https://github.com/shreyaspatel7/walmart-scraper.git
+cd walmart-scraper/
+
+# Set up virtual env
+virtualenv venv --python=python3
+. venv/bin/activate
+
+# Install dependencies
+pip install -r requirements.txt 
+```
+2. You will have to run `python database_setup.py` to generate DB models.
+3. You will have to  run the Spider with `python -m scrapy crawl ca_walmart -a branch=3106`. Where `branch` is the id of thw Walmart store you want to scrap.This will aggregate the sqlite database.
 
 
 ## Code description
@@ -78,18 +91,6 @@ For now, we are only ingesting the [Fruits](https://www.walmart.ca/en/grocery/fr
 This Scrapy crawler will extract data from Walmart based on the passed branch number as an argument.
 
 It includes all the data cleaning and filtering rules as well as pre-configured cookies that were required by default for the website.
-
-**Changes**
-
-1. `scrapers/items.py` added URL and category fields
-2. `scrapers/pipelines.py`added URL, package and category variables
-3. `scrapers/spiders/ca_walmart.py` added the following changes:
-4. `.gitignore' to ignore db.sqlite file due to security and size concerns.
-
-- `start_requests` function 
-- `parse` function to get number of pages
-- `parse_page` function to extract product item per page
-- `parse_items` function to extract product item details. I am also making an API call in this to get price data. 
 
 
 **To run the scraping job for multiple stores, simply pass branch id as following** 
